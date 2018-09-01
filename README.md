@@ -8,28 +8,40 @@ Crawler for sphinx to index the links into sphinx search
 ##Features
 
 crawl through website within specified domain
+
 extract links from website
+
 store pages to disk
+
 compress page's content with deflate algorithm
+
 work through a proxy
+
 retry on error (502-504)
+
 intelligent behavior on various response codes
-configurable fetch rate, maximum retries number, maximum number of sequential redirects, maximum number of consecutive failed requests (returning code 502, 503, 504) to decide host as unavailable, maximum document size (chunked-transfer supported)
+
+configurable fetch rate, maximum retries number, maximum number of sequential redirects, maximum number of consecutive failed requests 
+(returning code 502, 503, 504) to decide host as unavailable, maximum document size (chunked-transfer supported)
+
 revisit pages after specified time
+
 configurable User-Agent header and list of applicable user-agents from robots.txt (for example, use rules only for "*" ang "google")
+
 filter duplicate pages
+
 robots.txt compliance
+
 <meta name="robots" ...> compliance
+
 save documents in Sphinx's realtime index and update it
-written in Java
 
 ##Archive structure
 
 config - configuration file is stored here
+
 data - by default, the directory for fetched content. Can be altered by "directory" directive. Fetched pages are stored in <directory>/<hostname>/<first_letter_of_md5_hashed_url>/<second_letter_of_md5_hashed_url>/<md5_hashed_url>.html Example: data/en.wikipedia.org/c/d/cd6c8f619fe02d9ea5d283cea1dfdefc.html
-db - directory for crawler's database
-lib - libraries used by crawler
-crawler.jar - main executable file
+
 ##Config Template config file is in archive and contains detailed comments for each directive.
 
 ##Requirements Java version 7 or higher.
