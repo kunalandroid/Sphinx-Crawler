@@ -22,6 +22,7 @@ robots.txt compliance
 <meta name="robots" ...> compliance
 save documents in Sphinx's realtime index and update it
 written in Java
+
 ##Archive structure
 
 config - configuration file is stored here
@@ -78,9 +79,3 @@ initialUrl = http://simple-website.com/
 ###4. Run java -jar crawler.jar
 
 ##If you are not using Sphinx If you are not using Sphinx and just want to fetch the website and save it to disk, just skip "module", "sphinxIndex", "sphinxHost" and "sphinxPort" directives and crawler will do it.
-
-##Known issues
-
-For now it crawls only pages within specified domain. E.g. if initialUrl = http://domain.org, all links from www.domain.org are ignored. Other policies are to be implemented.
-Sometimes it takes too long for crawler to exit on Ctrl-C. It's because of database engine that i used for this crawler. It performs optimization on shutdown, so it's recommended to wait for the end of this process.
-Minimum fetch rate is 1 page per second. It can be a problem for very slow websites, but is suitable for most of others.
